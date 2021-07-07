@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/settings"
-        android:textSize="36dp"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textSize="36dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

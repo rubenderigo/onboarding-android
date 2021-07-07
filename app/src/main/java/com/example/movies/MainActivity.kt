@@ -19,7 +19,13 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavegation.setupWithNavController(navController)
 
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.moviesFragment, R.id.peopleFragment, R.id.settingsFragment))
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.moviesFragment,
+                R.id.peopleFragment,
+                R.id.settingsFragment
+            )
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 }

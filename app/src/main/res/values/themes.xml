@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="Theme.Movies" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/dark_blue_grey</item>
         <item name="colorPrimaryDark">@color/pine_green</item>

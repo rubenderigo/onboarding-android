@@ -4,15 +4,15 @@
         android:id="@+id/moviesFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_movie_24"
-        android:title="@string/movies"/>
+        android:title="@string/movies" />
     <item
         android:id="@+id/peopleFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_person_24"
-        android:title="@string/people"/>
+        android:title="@string/people" />
     <item
         android:id="@+id/settingsFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_settings_24"
-        android:title="@string/settings"/>
+        android:title="@string/settings" />
 </menu>
