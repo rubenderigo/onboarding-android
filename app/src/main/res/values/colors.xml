@@ -2,8 +2,8 @@
 <resources>
     <color name="pine_green">#051218</color>
     <color name="dark_blue_grey">#0a1c24</color>
-    <color name="greyish_brown">#424242</color>
     <color name="white">#ffffff</color>
     <color name="dark_mint">#2cd77d</color>
-    <color name="weird_green">#44db83</color>
+    <color name="weird_green">#992CD77D</color>
+    <color name="semi_white">#99FFFFFF</color>
 </resources>
