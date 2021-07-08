@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+
+    <item android:drawable="@drawable/group"/>
+
+    <item
+        android:height="130dp"
+        android:width="150dp"
+        android:gravity="center">
+        <bitmap android:src="@drawable/primary_green_d_70_eebe_18_a_5_eb_5_b_166_d_5_c_1_ef_0796715_b_8_d_1_a_2_cbc_698_f_96_d_311_d_62_f_894_ae_87085"/>
+    </item>
+</layer-list>
