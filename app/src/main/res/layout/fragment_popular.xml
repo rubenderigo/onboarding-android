@@ -10,18 +10,20 @@
             type="com.example.movies.movies.PopularViewModel" />
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".movies.PopularFragment">
+        android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/movies_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:listData="@{viewModel.movies}"
             app:spanCount="1"
             tools:itemCount="16"
             tools:listitem="@layout/item_movie" />
 
-    </FrameLayout>
+    </LinearLayout>
 </layout>

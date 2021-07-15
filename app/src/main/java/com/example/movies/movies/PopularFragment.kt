@@ -18,6 +18,7 @@ class PopularFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         val binding = FragmentPopularBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel

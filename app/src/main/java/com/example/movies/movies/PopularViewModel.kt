@@ -1,6 +1,5 @@
 package com.example.movies.movies
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.movies.network.Movie
 import com.example.movies.network.MoviesApi
 import kotlinx.coroutines.launch
-import retrofit2.Call
 
 class PopularViewModel : ViewModel() {
 
@@ -17,7 +15,6 @@ class PopularViewModel : ViewModel() {
 
     init {
         getMovies()
-        Log.d("PopularViewModel", "result: ${_movies.value}")
     }
 
     private fun getMovies() {
@@ -26,10 +23,8 @@ class PopularViewModel : ViewModel() {
             try {
                 val listMovies = MoviesApi.retrofitService.getPopularMovies()
                 _movies.value = listMovies.movies
-                Log.d("PopularViewModel", "try: ${_movies.value}")
             } catch (e: Exception) {
-                Log.d("PopularViewModel", "exeption: ${e}")
-                _movies.value = null
+                _movies.value = listOf()
             }
         }
     }

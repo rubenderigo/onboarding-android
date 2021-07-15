@@ -25,7 +25,7 @@ class MovieAdapter :
         }
 
         override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
-            return oldItem.imgSrcUrl == newItem.imgSrcUrl
+            return oldItem.id == newItem.id
         }
     }
 

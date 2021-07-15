@@ -6,7 +6,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.Call as Call
 
 private const val BASE_URL = "https://api.themoviedb.org/3/"
 private const val API_KEY = "dc9f006f86919b1c3de8a839e461ad59"
