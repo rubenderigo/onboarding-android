@@ -1,4 +1,3 @@
 package com.example.movies.network
 
-class MovieApiStatus {
-}
+enum class MoviesApiStatus { LOADING, ERROR, DONE }
