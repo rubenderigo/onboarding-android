@@ -9,7 +9,7 @@ import com.example.movies.network.MoviesApi
 import com.example.movies.network.MoviesApiStatus
 import kotlinx.coroutines.launch
 
-class PopularViewModel : ViewModel() {
+class TopRatedViewModel : ViewModel() {
 
     private val _movies = MutableLiveData<List<Movie>>()
     val movies: LiveData<List<Movie>> = _movies
@@ -26,7 +26,7 @@ class PopularViewModel : ViewModel() {
         viewModelScope.launch {
             _status.value = MoviesApiStatus.LOADING
             try {
-                val listMovies = MoviesApi.retrofitService.getPopularMovies()
+                val listMovies = MoviesApi.retrofitService.getTopRatedMovies()
                 _movies.value = listMovies.movies
                 _status.value = MoviesApiStatus.DONE
             } catch (e: Exception) {

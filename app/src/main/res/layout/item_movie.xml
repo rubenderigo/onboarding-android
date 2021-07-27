@@ -18,21 +18,23 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp"
+            app:cardElevation="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ImageView
+
+                <com.example.movies.AspectRatioImageView
                     android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
                     app:imageUrl="@{movie.posterPath}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:ratio="1.5"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
@@ -82,7 +84,7 @@
                     android:layout_weight="1"
                     android:ellipsize="end"
                     android:fontFamily="@font/roboto"
-                    android:lines="6"
+                    android:lines="5"
                     android:text="@{movie.overview}"
                     android:textAlignment="textStart"
                     android:textSize="12sp"
