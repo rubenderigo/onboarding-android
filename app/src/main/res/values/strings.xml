@@ -23,6 +23,7 @@
     <string name="cast">Cast</string>
     <string name="crew">Crew</string>
     <string name="known_for">Known for</string>
+    <string name="known_for_person">Known for: </string>
     <string name="view_all">View all</string>
     <string name="biography">Biography</string>
     <string name="gender">Gender</string>

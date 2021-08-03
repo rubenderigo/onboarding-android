@@ -11,7 +11,7 @@
         tools:layout="@layout/fragment_movies" />
     <fragment
         android:id="@+id/peopleFragment"
-        android:name="com.example.movies.People.PeopleFragment"
+        android:name="com.example.movies.people.PeopleFragment"
         android:label="People"
         tools:layout="@layout/fragment_people" />
     <fragment

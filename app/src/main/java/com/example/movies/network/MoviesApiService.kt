@@ -30,6 +30,9 @@ interface MoviesApiService {
     @GET("movie/{movie_id}/credits?api_key=${API_KEY}")
     suspend fun getCreditsMovies(@Path("movie_id") movie_id: Int): Movie
 
+    @GET("person/popular?api_key=${API_KEY}")
+    suspend fun getPopularPeople(): People
+
 }
 
 object MoviesApi {
