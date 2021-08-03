@@ -64,6 +64,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/roboto"
                     android:maxLines="3"
+                    android:text="@string/known_for_person"
                     android:textAlignment="textStart"
                     android:textSize="13sp"
                     app:knowFor='@{person.knownFor}'

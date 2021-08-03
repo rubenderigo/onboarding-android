@@ -61,5 +61,5 @@ fun bindStatus(statusImageView: ImageView, status: MoviesApiStatus?) {
 @BindingAdapter("knowFor")
 fun knowFor(textView: TextView, data: List<Movie>?) {
     val titleMovies = data?.map { it.title }
-    textView.text = "Know for: ${titleMovies?.toString()?.replace("[", "")?.replace("]", "")}"
+    titleMovies?.forEach { it -> if (it != null) textView.text = textView.text.toString() + " $it," }
 }
