@@ -45,4 +45,3 @@ class MoviesFragment : Fragment() {
     }
 
 }
-
