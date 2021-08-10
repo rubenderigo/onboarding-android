@@ -27,8 +27,8 @@ interface MoviesApiService {
     @GET("movie/top_rated?api_key=${API_KEY}")
     suspend fun getTopRatedMovies(): Movies
 
-    @GET("movie/{movie_id}/credits?api_key=${API_KEY}")
-    suspend fun getCreditsMovies(@Path("movie_id") movie_id: Int): Movie
+    @GET("movie/{movie_id}?api_key=${API_KEY}")
+    suspend fun getDetailMovies(@Path("movie_id") movie_id: Int?): Movie
 
     @GET("person/popular?api_key=${API_KEY}")
     suspend fun getPopularPeople(): People

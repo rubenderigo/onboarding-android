@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movies">
         <activity
-            android:name=".movies.DetailMovieActivity"
-            android:exported="true" />
-        <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -24,6 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity
+            android:name=".movies.DetailMovieActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

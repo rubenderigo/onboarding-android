@@ -26,13 +26,13 @@ class MovieAdapter(private val listener: OnItemClickListener) :
         override fun onClick(p0: View?) {
             val position: Int = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
+                listener.onItemClick(position, binding.movie)
             }
         }
     }
 
     interface OnItemClickListener {
-        fun onItemClick(position: Int)
+        fun onItemClick(position: Int, item: Movie?)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Movie>() {

@@ -8,6 +8,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/activity_detail_movie.xml" value="0.21014492753623187" />
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/fragment_popular.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/item_movie.xml" value="0.17603850050658562" />
         <entry key="app/src/main/res/layout/activity_detail_movie.xml" value="0.28020833333333334" />
         <entry key="app/src/main/res/layout/detail_movie_fragment.xml" value="0.22291666666666668" />
       </map>
