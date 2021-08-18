@@ -5,6 +5,27 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/activity_detail_movie.xml" value="0.21014492753623187" />
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/fragment_people.xml" value="0.18958333333333333" />
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/fragment_popular.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/fragment_top_rated.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/item_cast.xml" value="0.25" />
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/item_movie.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/Marcos/AndroidStudioProjects/onboarding-android/app/src/main/res/layout/item_person.xml" value="0.18958333333333333" />
+        <entry key="app/src/main/res/drawable/rounded_edittext.xml" value="0.2712962962962963" />
+        <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.41333333333333333" />
+        <entry key="app/src/main/res/layout/activity_detail_movie.xml" value="0.28020833333333334" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/layout/detail_movie_fragment.xml" value="0.22291666666666668" />
+        <entry key="app/src/main/res/layout/fragment_popular.xml" value="0.25" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.41333333333333333" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
