@@ -24,3 +24,22 @@ data class Movie(
     @Json(name = "video") val video: Boolean?,
     @Json(name = "vote_average") val voteAverage: Float?
 )
+
+data class DetailMovie (
+    @Json(name = "id") val id: Int?,
+    @Json(name = "cast") val cast: List<CastMovie>?,
+    @Json(name = "crew") val crew: List<CrewMovie>?
+)
+
+data class CastMovie(
+    @field:Json(name = "id") val id: Int?,
+    @field:Json(name = "name") val name: String?,
+    @Json(name = "profile_path") val profilePath: String?,
+    @field:Json(name = "character") val character: String?
+)
+
+data class CrewMovie(
+    @field:Json(name = "id") val id: Int?,
+    @field:Json(name = "name") val name: String?,
+    @field:Json(name = "department") val department: String?
+)
