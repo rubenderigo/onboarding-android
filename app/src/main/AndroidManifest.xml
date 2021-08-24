@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movies">
         <activity
-            android:name=".login.LoginActivity"
-            android:exported="true" />
-        <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -23,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="true"
+            android:label="@string/login" />
+        <activity
+            android:name=".signup.SignUpActivity"
+            android:exported="true"
+            android:label="@string/sign_up" />
         <activity android:name=".MainActivity" />
     </application>
 
