@@ -34,11 +34,13 @@
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="log_out">Log out</string>
-    <string name="login">Login</string>
-    <string name="login_information">Log in to access to movies information</string>
-    <string name="sig_up_information">Sign up to access to movies information</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_in_information">Sign in to access to movies information</string>
+    <string name="sign_up_information">Sign up to access to movies information</string>
     <string name="password">Password</string>
     <string name="sign_up">Sign up</string>
     <string name="save">Save</string>
     <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
