@@ -1,15 +1,31 @@
-package com.example.movies.register
+package com.example.movies.settings
 
 import android.util.Log
-import android.widget.Toast
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.movies.data.User
 import com.example.movies.data.UserDao
 import kotlinx.coroutines.launch
 
-class SignUpViewModel(private val userDao: UserDao) : ViewModel() {
+class DataViewModel(private val userDao: UserDao) : ViewModel() {
+
+    private val _username = MutableLiveData<String>()
+    val username: LiveData<String> = _username
+
+    private val _email = MutableLiveData<String>()
+    val email: LiveData<String> = _email
+
+    init {
+        Log.d("settings", "${_username.value}")
+    }
+
+    fun setDataUser(username: String, email: String) {
+        _username.value = username
+        _email.value = email
+    }
+
+    fun retrieveUser(username: String, password: String): LiveData<User> {
+        return userDao.getUser(username, password).asLiveData()
+    }
 
     private fun insertUser(user: User) {
         viewModelScope.launch {
@@ -29,16 +45,15 @@ class SignUpViewModel(private val userDao: UserDao) : ViewModel() {
         val newUser = getNewItemEntry(username, email, password)
         insertUser(newUser)
     }
-
 }
 
-class SignUpViewModelFactory(
+class DataViewModelFactory(
     private val userDao: UserDao
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom((SignUpViewModel::class.java))) {
+        if (modelClass.isAssignableFrom((DataViewModel::class.java))) {
             @Suppress("UNCHECKED_CAST")
-            return SignUpViewModel(userDao) as T
+            return DataViewModel(userDao) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

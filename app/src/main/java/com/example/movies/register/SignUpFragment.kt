@@ -11,7 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.observe
@@ -20,13 +20,19 @@ import androidx.navigation.Navigation
 import com.example.movies.MainActivity
 import com.example.movies.MoviesApplication
 import com.example.movies.R
+import com.example.movies.databinding.FragmentSettingsBinding
+import com.example.movies.databinding.FragmentSignUpBinding
+import com.example.movies.settings.DataViewModel
+import com.example.movies.settings.DataViewModelFactory
 
 class SignUpFragment : Fragment() {
 
-    lateinit var navController: NavController
+    private lateinit var navController: NavController
 
-    private val viewModel: SignUpViewModel by viewModels {
-        SignUpViewModelFactory(
+    private lateinit var binding: FragmentSignUpBinding
+
+    private val viewModel: DataViewModel by activityViewModels {
+        DataViewModelFactory(
             (activity?.application as MoviesApplication).database.userDao()
         )
     }
@@ -60,43 +66,40 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+        val fragmentBinding = FragmentSignUpBinding.inflate(inflater, container, false)
+        binding = fragmentBinding
+        return fragmentBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding?.data = viewModel
         navController = Navigation.findNavController(view)
-        val sign_in = view.findViewById(R.id.sign_in) as TextView
 
-        sign_in.setOnClickListener {
+        binding?.signIn.setOnClickListener {
             navController.navigate(R.id.action_signUpFragment_to_signInFragment)
         }
 
-        val emailLayout = view.findViewById<EditText>(R.id.email_sign_up)
-        val usernameLayout = view.findViewById<EditText>(R.id.username_sign_up)
-        val passwordLayout = view.findViewById<EditText>(R.id.password_sign_up)
-        val signUpButton = view.findViewById<Button>(R.id.button_sign_up)
-
-        emailLayout.doOnTextChanged { text, _, _, _ ->
+        binding?.emailSignUp.doOnTextChanged { text, _, _, _ ->
             emailLiveData.value = text?.toString()
         }
-        usernameLayout.doOnTextChanged { text, _, _, _ ->
+        binding?.usernameSignUp.doOnTextChanged { text, _, _, _ ->
             usernameLiveData.value = text?.toString()
         }
-        passwordLayout.doOnTextChanged { text, _, _, _ ->
+        binding?.passwordSignUp.doOnTextChanged { text, _, _, _ ->
             passwordLiveData.value = text?.toString()
         }
         isValidLiveData.observe(viewLifecycleOwner) { isValid ->
-            signUpButton.isEnabled = isValid
+            binding?.buttonSignUp.isEnabled = isValid
         }
 
-        signUpButton.setOnClickListener {
+        binding?.buttonSignUp.setOnClickListener {
             addNewItem(usernameLiveData.value, emailLiveData.value, passwordLiveData.value)
             Toast.makeText(activity, "Sign Up succefully", Toast.LENGTH_LONG).show()
             activity?.let{
                 val intent = Intent (it, MainActivity::class.java)
                 it.startActivity(intent)
+                it.finish()
             }
         }
     }

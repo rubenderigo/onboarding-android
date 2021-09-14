@@ -2,34 +2,33 @@ package com.example.movies.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.observe
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.movies.MainActivity
 import com.example.movies.MoviesApplication
 import com.example.movies.R
-import com.example.movies.data.User
+import com.example.movies.databinding.FragmentSignInBinding
+import com.example.movies.settings.DataViewModel
+import com.example.movies.settings.DataViewModelFactory
 
 class SignInFragment : Fragment() {
 
-    lateinit var navController: NavController
+    private lateinit var navController: NavController
 
-    private val viewModel: SignInViewModel by viewModels {
-        SignInViewModelFactory(
+    private lateinit var binding: FragmentSignInBinding
+
+    private val viewModel: DataViewModel by activityViewModels {
+        DataViewModelFactory(
             (activity?.application as MoviesApplication).database.userDao()
         )
     }
@@ -54,44 +53,43 @@ class SignInFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_in, container, false)
+        val fragmentBinding = FragmentSignInBinding.inflate(inflater, container, false)
+        binding = fragmentBinding
+        return fragmentBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         navController = Navigation.findNavController(view)
-        val sign_up = view.findViewById(R.id.sign_up) as TextView
 
-        sign_up.setOnClickListener {
+        binding?.data = viewModel
+
+        binding?.signUp?.setOnClickListener {
             navController.navigate(R.id.action_signInFragment_to_signUpFragment)
         }
 
-        val usernameLayout = view.findViewById<EditText>(R.id.username_login)
-        val passwordLayout = view.findViewById<EditText>(R.id.password_login)
-        val signInButton = view.findViewById<Button>(R.id.button_sign_in)
-
-        usernameLayout.doOnTextChanged { text, _, _, _ ->
+        binding?.usernameLogin?.doOnTextChanged { text, _, _, _ ->
             usernameLiveData.value = text?.toString()
         }
-        passwordLayout.doOnTextChanged { text, _, _, _ ->
+        binding?.passwordLogin?.doOnTextChanged { text, _, _, _ ->
             passwordLiveData.value = text?.toString()
         }
         isValidLiveData.observe(viewLifecycleOwner) { isValid ->
-            signInButton.isEnabled = isValid
+            binding?.buttonSignIn?.isEnabled = isValid
         }
 
-        signInButton.setOnClickListener {
+        binding?.buttonSignIn?.setOnClickListener {
             viewModel.retrieveUser(
                 usernameLiveData.value.toString(),
                 passwordLiveData.value.toString()
-            ).observe(this.viewLifecycleOwner) { selectedUser ->
-                if (selectedUser != null) {
+            ).observe(this.viewLifecycleOwner) { user ->
+                if (user != null) {
+                    viewModel.setDataUser(user.username, user.email)
                     activity?.let {
                         Toast.makeText(activity, "Sign in succefully", Toast.LENGTH_LONG).show()
                         val intent = Intent(it, MainActivity::class.java)
                         it.startActivity(intent)
+                        it.finish()
                     }
                 } else {
                     Toast.makeText(activity, "User not found", Toast.LENGTH_LONG).show()
