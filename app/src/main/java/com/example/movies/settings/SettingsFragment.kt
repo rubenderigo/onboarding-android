@@ -42,8 +42,8 @@ class SettingsFragment : Fragment() {
 
         binding?.buttonLogOut.setOnClickListener {
             Toast.makeText(activity, "Log out", Toast.LENGTH_LONG).show()
-            activity?.let{
-                val intent = Intent (it, LoginRegisterActivity::class.java)
+            activity?.let {
+                val intent = Intent(it, LoginRegisterActivity::class.java)
                 it.startActivity(intent)
                 it.finish()
             }
@@ -52,5 +52,20 @@ class SettingsFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_settings, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_close_settings -> {
+                Toast.makeText(activity, "Log out", Toast.LENGTH_LONG).show()
+                activity?.let {
+                    val intent = Intent(it, LoginRegisterActivity::class.java)
+                    it.startActivity(intent)
+                    it.finish()
+                }
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
