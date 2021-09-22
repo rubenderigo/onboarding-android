@@ -36,6 +36,7 @@ interface MoviesApiService {
     @GET("person/popular?api_key=${API_KEY}")
     suspend fun getPopularPeople(): People
 
+
     @GET("person/{person_id}?api_key=${API_KEY}")
     suspend fun getDetailPerson(@Path("person_id") person_id: Int?): DetailPerson
 

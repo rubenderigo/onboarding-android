@@ -6,7 +6,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.movies.databinding.ActivityDetailMovieBinding
 import com.example.movies.movies.adapters.CastAdapter
+import com.example.movies.movies.adapters.MovieAdapter
 import com.example.movies.network.CastMovie
+import com.example.movies.network.Movie
 
 class DetailMovieActivity : AppCompatActivity(), CastAdapter.OnItemClickListener {
 
