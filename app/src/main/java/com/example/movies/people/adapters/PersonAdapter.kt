@@ -1,6 +1,7 @@
 package com.example.movies.people.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -8,15 +9,30 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.databinding.ItemPersonBinding
 import com.example.movies.network.Person
 
-class PersonAdapter :
+class PersonAdapter(private val listener: OnItemClickListener) :
     ListAdapter<Person, PersonAdapter.PersonViewHolder>(DiffCallback) {
 
-    class PersonViewHolder(private val binding: ItemPersonBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class PersonViewHolder(private val binding: ItemPersonBinding) :
+        RecyclerView.ViewHolder(binding.root), View.OnClickListener {
         fun bind(person: Person) {
             binding.person = person
             binding.executePendingBindings()
         }
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(p0: View?) {
+            val position: Int = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position, binding.person)
+            }
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int, item: Person?)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Person>() {

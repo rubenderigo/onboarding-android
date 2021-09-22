@@ -7,10 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.viewModels
-import com.example.movies.R
-import com.example.movies.databinding.FragmentPopularBinding
 import com.example.movies.databinding.FragmentTopRatedBinding
 import com.example.movies.movies.adapters.MovieAdapter
 import com.example.movies.network.Movie

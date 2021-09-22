@@ -11,6 +11,7 @@ import com.example.movies.movies.adapters.CastAdapter
 import com.example.movies.movies.adapters.MovieAdapter
 import com.example.movies.network.*
 import com.example.movies.people.adapters.PersonAdapter
+import com.example.movies.people.adapters.PersonCastAdapter
 
 private const val BASE_URL_IMG = "https://image.tmdb.org/t/p/w500"
 
@@ -32,6 +33,13 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<Person>?) {
 @BindingAdapter("dataCast")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<CastMovie>?) {
     val adapter = recyclerView.adapter as CastAdapter
+    adapter.submitList(data)
+}
+
+@JvmName("bindRecyclerViewCastPeople")
+@BindingAdapter("dataCastPeople")
+fun bindRecyclerView(recyclerView: RecyclerView, data: List<Cast>?) {
+    val adapter = recyclerView.adapter as PersonCastAdapter
     adapter.submitList(data)
 }
 

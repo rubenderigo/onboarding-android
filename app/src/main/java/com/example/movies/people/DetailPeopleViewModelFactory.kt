@@ -1,10 +1,10 @@
-package com.example.movies.movies
+package com.example.movies.people
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class DetailMovieViewModelFactory(private val movie_id: Int?) :
+class DetailPeopleViewModelFactory(private val person_id: Int?) :
     ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
-        DetailMovieViewModel(movie_id) as T
+        DetailPeopleViewModel(person_id) as T
 }
