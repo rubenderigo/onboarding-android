@@ -6,7 +6,7 @@
     <data>
         <variable
             name="data"
-            type="com.example.movies.settings.DataViewModel" />
+            type="com.example.movies.register.SignUpViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

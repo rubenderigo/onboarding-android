@@ -14,12 +14,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.observe
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.example.movies.MainActivity
-import com.example.movies.MoviesApplication
-import com.example.movies.R
+import com.example.movies.*
 import com.example.movies.databinding.FragmentSignInBinding
-import com.example.movies.settings.DataViewModel
-import com.example.movies.settings.DataViewModelFactory
 
 class SignInFragment : Fragment() {
 
@@ -27,8 +23,8 @@ class SignInFragment : Fragment() {
 
     private lateinit var binding: FragmentSignInBinding
 
-    private val viewModel: DataViewModel by activityViewModels {
-        DataViewModelFactory(
+    private val viewModel: SignInViewModel by activityViewModels {
+        SignInViewModelFactory(
             (activity?.application as MoviesApplication).database.userDao()
         )
     }
@@ -84,10 +80,11 @@ class SignInFragment : Fragment() {
                 passwordLiveData.value.toString()
             ).observe(this.viewLifecycleOwner) { user ->
                 if (user != null) {
-                    viewModel.setDataUser(user.username, user.email)
                     activity?.let {
                         Toast.makeText(activity, "Sign in succefully", Toast.LENGTH_LONG).show()
                         val intent = Intent(it, MainActivity::class.java)
+                        intent.putExtra("username", user.username)
+                        intent.putExtra("email", user.email)
                         it.startActivity(intent)
                         it.finish()
                     }

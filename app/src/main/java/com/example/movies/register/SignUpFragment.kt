@@ -6,9 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.activityViewModels
@@ -20,10 +17,7 @@ import androidx.navigation.Navigation
 import com.example.movies.MainActivity
 import com.example.movies.MoviesApplication
 import com.example.movies.R
-import com.example.movies.databinding.FragmentSettingsBinding
 import com.example.movies.databinding.FragmentSignUpBinding
-import com.example.movies.settings.DataViewModel
-import com.example.movies.settings.DataViewModelFactory
 
 class SignUpFragment : Fragment() {
 
@@ -31,8 +25,8 @@ class SignUpFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUpBinding
 
-    private val viewModel: DataViewModel by activityViewModels {
-        DataViewModelFactory(
+    private val viewModel: SignUpViewModel by activityViewModels {
+        SignUpViewModelFactory(
             (activity?.application as MoviesApplication).database.userDao()
         )
     }
@@ -98,6 +92,8 @@ class SignUpFragment : Fragment() {
             Toast.makeText(activity, "Sign Up succefully", Toast.LENGTH_LONG).show()
             activity?.let{
                 val intent = Intent (it, MainActivity::class.java)
+                intent.putExtra("username", usernameLiveData.value)
+                intent.putExtra("email", emailLiveData.value)
                 it.startActivity(intent)
                 it.finish()
             }

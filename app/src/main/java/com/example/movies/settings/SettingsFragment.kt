@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.movies.LoginRegisterActivity
-import com.example.movies.MoviesApplication
 import com.example.movies.R
 import com.example.movies.databinding.FragmentSettingsBinding
 
@@ -15,11 +14,7 @@ class SettingsFragment : Fragment() {
 
     private lateinit var binding: FragmentSettingsBinding
 
-    private val viewModel: DataViewModel by activityViewModels {
-        DataViewModelFactory(
-            (activity?.application as MoviesApplication).database.userDao()
-        )
-    }
+    private val viewModel: SettingsViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +34,6 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.data = viewModel
-
         binding?.buttonLogOut.setOnClickListener {
             Toast.makeText(activity, "Log out", Toast.LENGTH_LONG).show()
             activity?.let {
