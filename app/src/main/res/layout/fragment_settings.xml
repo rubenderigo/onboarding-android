@@ -14,53 +14,8 @@
         android:layout_height="match_parent"
         tools:context=".settings.SettingsFragment">
 
-     <View
-        android:id="@+id/view1"
-        android:layout_height="1dp"
-        android:layout_marginTop="@dimen/thirty_two_dp"
-        android:background="#d8d8d8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginTop="@dimen/sixteen_dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/username"
-        android:textColor="#800A1C24"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view1" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginTop="@dimen/eight_dp"
-        android:fontFamily="@font/roboto"
-        android:text="LinaLaBrujita"
-        android:textColor="@color/dark_blue_grey"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="@dimen/sixteen_dp"
-        android:layout_marginEnd="@dimen/sixteen_dp"
-        android:layout_marginBottom="@dimen/sixteen_dp"
-        app:cardCornerRadius="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/view2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view1">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <View
+            android:id="@+id/view1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="32dp"
@@ -200,5 +155,6 @@
             android:layout_marginTop="27dp"
             android:background="#d8d8d8"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
