@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    <variable
+        name="data"
+        type="com.example.movies.movies.detail.DetailMovieViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".movies.info.InfoMovieFragment">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/thirty_two_dp"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/status"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/status_movie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/four_dp"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:text="@{data.movie.status}"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="@dimen/twenty_for"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/release_date"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/status_movie" />
+
+        <TextView
+            android:id="@+id/release_date_movie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/four_dp"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto"
+            android:text="@{data.movie.releaseDate.toString()}"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/twenty_for"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/original_language"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/release_date_movie" />
+
+        <TextView
+            android:id="@+id/original_lenguage_movie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/four_dp"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto"
+            android:text="@{data.movie.originalLanguage}"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/twenty_for"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/runtime"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/original_lenguage_movie" />
+
+        <TextView
+            android:id="@+id/runtime_movie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/four_dp"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto"
+            android:text="@{data.movie.runtime.toString()}"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/twenty_for"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/budget"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/runtime_movie" />
+
+        <TextView
+            android:id="@+id/budget_movie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/four_dp"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto"
+            android:text='@{"$" + data.movie.budget.toString()}'
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/twenty_for"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/revenue"
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/budget_movie" />
+
+        <TextView
+            android:id="@+id/revenue_movies"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_for"
+            android:layout_marginTop="@dimen/four_dp"
+            android:layout_marginEnd="@dimen/twenty_for"
+            android:fontFamily="@font/roboto"
+            android:text='@{"$" +data.movie.renueve.toString()}'
+            android:textColor="@color/dark_blue_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

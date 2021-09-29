@@ -25,6 +25,8 @@
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.2887537993920973" />
         <entry key="app/src/main/res/layout/detail_movie_fragment.xml" value="0.22291666666666668" />
+        <entry key="app/src/main/res/layout/fragment_detail_movie.xml" value="0.38958333333333334" />
+        <entry key="app/src/main/res/layout/fragment_info_movie.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/fragment_people.xml" value="0.10815602836879433" />
         <entry key="app/src/main/res/layout/fragment_popular.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.25" />

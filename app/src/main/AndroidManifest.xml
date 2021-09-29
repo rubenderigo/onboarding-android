@@ -24,7 +24,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".LoginRegisterActivity" />
         <activity
-            android:name=".movies.DetailMovieActivity"
+            android:name=".movies.detail.DetailMovieActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity" />
         <activity

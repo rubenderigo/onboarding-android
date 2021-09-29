@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.databinding.ItemCastBinding
-import com.example.movies.movies.DetailMovieActivity
+import com.example.movies.movies.detail.DetailMovieFragment
 import com.example.movies.network.CastMovie
 
-class CastAdapter(private val listener: DetailMovieActivity) :
+class CastAdapter(private val listener: DetailMovieFragment) :
     ListAdapter<CastMovie, CastAdapter.CastMovieViewHolder>(DiffCallback) {
 
     inner class CastMovieViewHolder(private val binding: ItemCastBinding) :
