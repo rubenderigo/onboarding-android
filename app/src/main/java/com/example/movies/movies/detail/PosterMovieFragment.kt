@@ -31,15 +31,14 @@ class PosterMovieFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as DetailMovieActivity?)?.getSupportActionBar()?.show()
         binding.posterPath.setOnClickListener {
             if (binding.likeDown.visibility == View.GONE) {
-                (activity as DetailMovieActivity?)?.getSupportActionBar()?.show()
+                (activity as DetailMovieActivity?)?.getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
                 binding.likeDown.visibility = View.VISIBLE
                 binding.likeUp.visibility = View.VISIBLE
                 binding.posterPath.scaleType = ImageView.ScaleType.FIT_START
             } else {
-                (activity as DetailMovieActivity?)?.getSupportActionBar()?.hide()
+                (activity as DetailMovieActivity?)?.getSupportActionBar()?.setDisplayHomeAsUpEnabled(false)
                 binding.likeDown.visibility = View.GONE
                 binding.likeUp.visibility = View.GONE
                 binding.posterPath.scaleType = ImageView.ScaleType.FIT_CENTER
