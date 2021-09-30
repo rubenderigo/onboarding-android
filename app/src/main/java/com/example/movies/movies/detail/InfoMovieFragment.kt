@@ -1,4 +1,4 @@
-package com.example.movies.movies.info
+package com.example.movies.movies.detail
 
 import android.os.Bundle
 import android.view.*

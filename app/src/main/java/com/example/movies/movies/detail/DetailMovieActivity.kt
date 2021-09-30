@@ -19,7 +19,7 @@ class DetailMovieActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_detail_movie)
         navController.setGraph(R.navigation.nav_movie_detail, bundle)
         val appBarConfiguration =
-            AppBarConfiguration(setOf(R.id.detailMovieFragment, R.id.infoMovieFragment))
+            AppBarConfiguration(setOf(R.id.detailMovieFragment, R.id.infoMovieFragment, R.id.poster_movie))
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)

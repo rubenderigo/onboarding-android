@@ -42,9 +42,13 @@ class DetailMovieFragment : Fragment(), CastAdapter.OnItemClickListener {
         super.onViewCreated(view, savedInstanceState)
         (activity as DetailMovieActivity?)?.getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
         navController = Navigation.findNavController(view)
+        val bundle = bundleOf("id" to arguments?.getInt("id"))
+
         binding.infoMovie.setOnClickListener {
-            val bundle = bundleOf("id" to arguments?.getInt("id"))
             navController.navigate(R.id.action_detailMovieFragment_to_infoMovieFragment, bundle)
+        }
+        binding.posterMovie.setOnClickListener {
+            navController.navigate(R.id.action_detailMovieFragment_to_posterMovieFragment, bundle)
         }
     }
 

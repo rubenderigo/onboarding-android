@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/infoMovieFragment"
-        android:name="com.example.movies.movies.info.InfoMovieFragment"
+        android:name="com.example.movies.movies.detail.InfoMovieFragment"
         android:label="@string/movie_facts" >
         <action
             android:id="@+id/action_infoMovieFragment_to_detailMovieFragment"
@@ -27,5 +27,19 @@
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_detailMovieFragment_to_posterMovieFragment"
+            app:destination="@id/posterMovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/posterMovieFragment"
+        android:name="com.example.movies.movies.detail.PosterMovieFragment"
+        android:label="@string/not_name" >
+        <action
+            android:id="@+id/action_posterMovieFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
+        <argument
+            android:name="path_poster"
+            app:argType="string" />
     </fragment>
 </navigation>
