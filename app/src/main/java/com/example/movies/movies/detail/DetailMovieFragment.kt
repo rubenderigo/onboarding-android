@@ -50,6 +50,9 @@ class DetailMovieFragment : Fragment(), CastAdapter.OnItemClickListener {
         binding.posterMovie.setOnClickListener {
             navController.navigate(R.id.action_detailMovieFragment_to_posterMovieFragment, bundle)
         }
+        binding.fullCastMovie.setOnClickListener {
+            navController.navigate(R.id.action_detailMovieFragment_to_castCrewFragment, bundle)
+        }
     }
 
     override fun onItemClick(position: Int, item: CastMovie?) {

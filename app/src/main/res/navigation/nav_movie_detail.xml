@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_detailMovieFragment_to_posterMovieFragment"
             app:destination="@id/posterMovieFragment" />
+        <action
+            android:id="@+id/action_detailMovieFragment_to_castCrewFragment"
+            app:destination="@id/castCrewFragment" />
     </fragment>
     <fragment
         android:id="@+id/posterMovieFragment"
@@ -41,5 +44,14 @@
         <argument
             android:name="path_poster"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/castCrewFragment"
+        android:name="com.example.movies.movies.detail.CastCrewFragment"
+        android:label="@string/not_name"
+        tools:layout="@layout/fragment_cast_crew" >
+        <action
+            android:id="@+id/action_castCrewFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
     </fragment>
 </navigation>
