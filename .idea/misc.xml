@@ -30,10 +30,10 @@
         <entry key="app/src/main/res/layout/detail_movie_fragment.xml" value="0.22291666666666668" />
         <entry key="app/src/main/res/layout/fragment_cast.xml" value="0.12407407407407407" />
         <entry key="app/src/main/res/layout/fragment_cast_crew.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_crew.xml" value="0.16018518518518518" />
+        <entry key="app/src/main/res/layout/fragment_crew.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_detail_movie.xml" value="0.15489130434782608" />
         <entry key="app/src/main/res/layout/fragment_info_movie.xml" value="0.19630192502532928" />
-        <entry key="app/src/main/res/layout/fragment_people.xml" value="0.10815602836879433" />
+        <entry key="app/src/main/res/layout/fragment_people.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_popular.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_poster_movie.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.25" />
@@ -41,6 +41,8 @@
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_cast.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_cast_movie.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_character.xml" value="0.12715298885511653" />
+        <entry key="app/src/main/res/layout/item_crew.xml" value="0.13095238095238096" />
         <entry key="app/src/main/res/menu/close_menu.xml" value="0.19166666666666668" />
         <entry key="app/src/main/res/menu/cross_menu.xml" value="0.2921875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.41333333333333333" />

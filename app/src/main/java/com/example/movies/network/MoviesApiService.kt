@@ -40,7 +40,7 @@ interface MoviesApiService {
     suspend fun getDetailPerson(@Path("person_id") person_id: Int?): DetailPerson
 
     @GET("person/{person_id}/movie_credits?api_key=${API_KEY}")
-    suspend fun getCastPerson(@Path("person_id") person_id: Int?): CastPerson
+    suspend fun getCastPerson(@Path("person_id") person_id: Int?): CastListPerson
 }
 
 object MoviesApi {

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.movies.databinding.ActivityDetailPeopleBinding
-import com.example.movies.network.Cast
+import com.example.movies.network.CastPerson
 import com.example.movies.people.adapters.PersonCastAdapter
 
 class DetailPeopleActivity : AppCompatActivity(), PersonCastAdapter.OnItemClickListener {
@@ -37,7 +37,7 @@ class DetailPeopleActivity : AppCompatActivity(), PersonCastAdapter.OnItemClickL
         return id?.toInt()
     }
 
-    override fun onItemClick(position: Int, cast: Cast?) {
+    override fun onItemClick(position: Int, cast: CastPerson?) {
         Toast.makeText(this, cast?.title.toString(), Toast.LENGTH_SHORT ).show()
     }
 }

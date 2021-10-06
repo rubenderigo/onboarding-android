@@ -9,8 +9,8 @@ import kotlinx.coroutines.launch
 
 class DetailPeopleViewModel(private val people_id: Int?) : ViewModel() {
 
-    private val _cast = MutableLiveData<CastPerson>()
-    val cast: LiveData<CastPerson> = _cast
+    private val _cast = MutableLiveData<CastListPerson>()
+    val cast: LiveData<CastListPerson> = _cast
 
     private val _person = MutableLiveData<DetailPerson>()
     val person: LiveData<DetailPerson> = _person

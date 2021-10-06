@@ -47,5 +47,6 @@ data class CastMovie(
 data class CrewMovie(
     @field:Json(name = "id") val id: Int?,
     @field:Json(name = "name") val name: String?,
+    @Json(name = "profile_path") val profilePath: String?,
     @field:Json(name = "department") val department: String?
 )

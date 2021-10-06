@@ -13,9 +13,10 @@ import androidx.navigation.Navigation
 import com.example.movies.R
 import com.example.movies.databinding.FragmentDetailMovieBinding
 import com.example.movies.movies.adapters.CastAdapter
+import com.example.movies.movies.adapters.CastCrewAdapter
 import com.example.movies.network.CastMovie
 
-class DetailMovieFragment : Fragment(), CastAdapter.OnItemClickListener {
+class DetailMovieFragment : Fragment(), CastCrewAdapter.OnItemClickListener {
 
     private lateinit var navController: NavController
 
@@ -34,7 +35,7 @@ class DetailMovieFragment : Fragment(), CastAdapter.OnItemClickListener {
         binding = FragmentDetailMovieBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        binding.billedCastMovie.adapter = CastAdapter(this)
+        binding.billedCastMovie.adapter = CastCrewAdapter(this)
         return binding.root
     }
 
