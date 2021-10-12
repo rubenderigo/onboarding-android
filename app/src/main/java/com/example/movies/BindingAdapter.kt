@@ -8,6 +8,8 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.movies.movies.adapters.CastAdapter
+import com.example.movies.movies.adapters.CastCrewAdapter
+import com.example.movies.movies.adapters.CrewAdapter
 import com.example.movies.movies.adapters.MovieAdapter
 import com.example.movies.network.*
 import com.example.movies.people.adapters.PersonAdapter
@@ -15,30 +17,38 @@ import com.example.movies.people.adapters.PersonCastAdapter
 
 private const val BASE_URL_IMG = "https://image.tmdb.org/t/p/w500"
 
-@JvmName("bindRecyclerViewMovies")
 @BindingAdapter("dataMovie")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<Movie>?) {
+fun bindMovie(recyclerView: RecyclerView, data: List<Movie>?) {
     val adapter = recyclerView.adapter as MovieAdapter
     adapter.submitList(data)
 }
 
-@JvmName("bindRecyclerViewPeople")
 @BindingAdapter("dataPeople")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<Person>?) {
+fun bindPeople(recyclerView: RecyclerView, data: List<Person>?) {
     val adapter = recyclerView.adapter as PersonAdapter
     adapter.submitList(data)
 }
 
-@JvmName("bindRecyclerViewCast")
+@BindingAdapter("dataCastCrewMovie")
+fun bindCastCrewMovie(recyclerView: RecyclerView, data: List<CastMovie>?) {
+    val adapter = recyclerView.adapter as CastCrewAdapter
+    adapter.submitList(data)
+}
+
 @BindingAdapter("dataCast")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<CastMovie>?) {
+fun bindCastMovie(recyclerView: RecyclerView, data: List<CastMovie>?) {
     val adapter = recyclerView.adapter as CastAdapter
     adapter.submitList(data)
 }
 
-@JvmName("bindRecyclerViewCastPeople")
-@BindingAdapter("dataCastPeople")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<Cast>?) {
+@BindingAdapter("dataCrew")
+fun bindCrewMovie(recyclerView: RecyclerView, data: List<CrewMovie>?) {
+    val adapter = recyclerView.adapter as CrewAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("dataKnowForPeople")
+fun bindKnowForPeople(recyclerView: RecyclerView, data: List<CastPerson>?) {
     val adapter = recyclerView.adapter as PersonCastAdapter
     adapter.submitList(data)
 }

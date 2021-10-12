@@ -7,15 +7,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.databinding.ItemCastMovieBinding
-import com.example.movies.network.Cast
+import com.example.movies.network.CastPerson
 import com.example.movies.people.DetailPeopleActivity
 
 class PersonCastAdapter(private val listener: DetailPeopleActivity) :
-    ListAdapter<Cast, PersonCastAdapter.CastViewHolder>(DiffCallback) {
+    ListAdapter<CastPerson, PersonCastAdapter.CastViewHolder>(DiffCallback) {
 
     inner class CastViewHolder(private val binding: ItemCastMovieBinding) :
         RecyclerView.ViewHolder(binding.root), View.OnClickListener {
-        fun bind(item: Cast) {
+        fun bind(item: CastPerson) {
             binding.cast = item
             binding.executePendingBindings()
         }
@@ -33,15 +33,15 @@ class PersonCastAdapter(private val listener: DetailPeopleActivity) :
     }
 
     interface OnItemClickListener {
-        fun onItemClick(position: Int, item: Cast?)
+        fun onItemClick(position: Int, item: CastPerson?)
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<Cast>() {
-        override fun areItemsTheSame(oldItem: Cast, newItem: Cast): Boolean {
+    companion object DiffCallback : DiffUtil.ItemCallback<CastPerson>() {
+        override fun areItemsTheSame(oldItem: CastPerson, newItem: CastPerson): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Cast, newItem: Cast): Boolean {
+        override fun areContentsTheSame(oldItem: CastPerson, newItem: CastPerson): Boolean {
             return oldItem.id == newItem.id
         }
     }

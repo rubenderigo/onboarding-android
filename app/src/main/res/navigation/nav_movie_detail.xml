@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_movie_detail"
+    app:startDestination="@id/detailMovieFragment">
+
+    <fragment
+        android:id="@+id/infoMovieFragment"
+        android:name="com.example.movies.movies.detail.InfoMovieFragment"
+        android:label="@string/movie_facts" >
+        <action
+            android:id="@+id/action_infoMovieFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailMovieFragment"
+        android:name="com.example.movies.movies.detail.DetailMovieFragment"
+        android:label="@string/not_name"
+        tools:layout="@layout/fragment_detail_movie">
+        <action
+            android:id="@+id/action_detailMovieFragment_to_infoMovieFragment"
+            app:destination="@id/infoMovieFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailMovieFragment_to_posterMovieFragment"
+            app:destination="@id/posterMovieFragment" />
+        <action
+            android:id="@+id/action_detailMovieFragment_to_castCrewFragment"
+            app:destination="@id/castCrewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/posterMovieFragment"
+        android:name="com.example.movies.movies.detail.PosterMovieFragment"
+        android:label="@string/not_name" >
+        <action
+            android:id="@+id/action_posterMovieFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
+        <argument
+            android:name="path_poster"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/castCrewFragment"
+        android:name="com.example.movies.movies.detail.CastCrewFragment"
+        android:label="@string/not_name"
+        tools:layout="@layout/fragment_cast_crew" >
+        <action
+            android:id="@+id/action_castCrewFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>

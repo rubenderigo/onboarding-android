@@ -2,7 +2,6 @@ package com.example.movies.movies
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.movies.databinding.FragmentPopularBinding
 import com.example.movies.movies.adapters.MovieAdapter
+import com.example.movies.movies.detail.DetailMovieActivity
 import com.example.movies.network.Movie
 
 class PopularFragment : Fragment(), MovieAdapter.OnItemClickListener {

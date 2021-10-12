@@ -30,11 +30,11 @@ data class DetailPerson(
     @Json(name = "profile_path") val profilePath: String?
 )
 
-data class CastPerson(
-    @field:Json(name = "cast") val cast: List<Cast>?
+data class CastListPerson(
+    @field:Json(name = "cast") val cast: List<CastPerson>?
 )
 
-data class Cast(
+data class CastPerson(
     @field:Json(name = "credit_id") val id: String?,
     @field:Json(name = "character") val character: String?,
     @field:Json(name = "title") val title: String?,
